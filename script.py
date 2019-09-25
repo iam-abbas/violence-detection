@@ -38,6 +38,8 @@ while(cap.isOpened()):
     if cv2.waitKey(50) & 0xFF == ord('q'):
       break
     cv2.putText(frame, text, (200, 200), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255))
+    if(i%40 == 0):
+        text = "No disturbing content"
     if(i%5 == 0):
         response = client.detect_moderation_labels(
             Image={
